@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "B20DCAT024_Nguyễn Xuân Cường",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 33.5, "left": 52.6, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 48.3,
+      "left": -43.8,
+      "attrs": { "temperature": "46.4", "humidity": "38.5" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:VIN", "red", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "dht1:SDA", "esp:D13", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
